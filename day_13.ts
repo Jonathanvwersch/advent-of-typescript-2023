@@ -1,10 +1,5 @@
 export type LengthOfArray<T extends any[]> = T["length"];
-export type Concat<T extends any[], K extends any[]> = K extends [
-  infer Head,
-  ...infer Tail
-]
-  ? Concat<[...T, Head], Tail>
-  : T;
+export type Concat<T extends any[], K extends any[]> = [...T, ...K];
 export type CreateArrayOfLength<
   T extends number,
   K extends any[] = []
